@@ -1,10 +1,10 @@
 //Version 2.0
 import processing.serial.*; //import the Serial library
 
-=======
+
 // importamos librerias 
 import processing.serial.*; //import the Serial library
->>>>>>> b9e951bed85fcbddf7446fcce2208e940b94f8a9
+
 import twitter4j.conf.*;
 import twitter4j.api.*;
 import twitter4j.*;
