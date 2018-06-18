@@ -1,5 +1,5 @@
+// importamos librerias
 import processing.serial.*; //import the Serial library
-
 import twitter4j.conf.*;
 import twitter4j.api.*;
 import twitter4j.*;
