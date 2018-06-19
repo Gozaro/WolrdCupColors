@@ -137,8 +137,8 @@ cp5.addBang("Expulsar1").setPosition(720, 165).setSize(37, 37)
   // UI ////////////////                   
   
   f = createFont("DroidSans",12,true);
-  hashtag1="happy";
-  hashtag2="mad";
+  hashtag1="#happy";
+  hashtag2="#worldcup";
   //impulsoNecesario =1;
   
   //segundos encendidos el motor
