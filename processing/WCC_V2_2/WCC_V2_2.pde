@@ -137,8 +137,8 @@ cp5.addBang("Expulsar1").setPosition(720, 165).setSize(37, 37)
   // UI ////////////////                   
   
   f = createFont("DroidSans",12,true);
-  hashtag1="happy";
-  hashtag2="mad";
+  hashtag1="#wordcup";
+  hashtag2="wordcup2018";
   //impulsoNecesario =1;
   
   //segundos encendidos el motor
@@ -151,7 +151,7 @@ cp5.addBang("Expulsar1").setPosition(720, 165).setSize(37, 37)
   println(Serial.list());
    
   //  initialize your serial port and set the baud rate to 9600
-  myPort = new Serial(this, Serial.list()[1], 9600);
+  myPort = new Serial(this, Serial.list()[0], 9600);
   myPort.bufferUntil('\n'); 
   
   cb = new ConfigurationBuilder();  

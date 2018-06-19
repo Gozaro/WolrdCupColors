@@ -1,5 +1,6 @@
 // Incluímos la librería para poder controlar el servo
 #include <Servo.h>
+#include <Adafruit_MotorShield.h>
 
 // Declaramos la variable para controlar el servo
 Servo servoMotor;
@@ -19,6 +20,8 @@ void setup() {
   digitalWrite(in1, HIGH);
 
   //declaramos pin para el servo
+  // el cable marron es ground
+  
   servoMotor.attach(9);
 
   // Inicializamos al ángulo 0 el servomotor

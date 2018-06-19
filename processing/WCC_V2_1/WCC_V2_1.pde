@@ -350,38 +350,14 @@ void draw() {
     
     if(!timerTwit02.running && noPara2) {
       myPort.write('4');
-      noPara2 = false;
       println("Para2");
+       noPara2 = false;
     }
 
  
      //myPort.write('0');
 }
 
-
-void keyPressed() {
-  
-  //myPort.write('1');
-  
-  if(key == '1')
-    myPort.write('1');
-  
-  if(key == '2')
-    myPort.write('2');
-
-  if(key == '3')
-    myPort.write('3');
-
-
-  if(key == '4')
-    myPort.write('4');
-
-
-  if(key == '0')
-    myPort.write('0');
-  
-  
-}
 
 void Expulsar1(int theN) {
   
@@ -442,4 +418,30 @@ void toggle(boolean theFlag) {
     
   }
 
+}
+
+
+
+void keyPressed() {
+  
+  //myPort.write('1');
+  
+  if(key == '1')
+    myPort.write('1');
+  
+  if(key == '2')
+    myPort.write('2');
+
+  if(key == '3')
+    myPort.write('3');
+
+
+  if(key == '4')
+    myPort.write('4');
+
+
+  if(key == '0')
+    myPort.write('0');
+  
+  
 }
