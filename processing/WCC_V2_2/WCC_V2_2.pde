@@ -154,7 +154,7 @@ cp5.addBang("Expulsar1").setPosition(720, 165).setSize(37, 37)
   myPort = new Serial(this, Serial.list()[1], 9600);
   myPort.bufferUntil('\n'); 
   
-  cb = new ConfigurationBuilder();  
+  cb = new ConfigurationBuilder();
 
   cb.setOAuthConsumerKey("luSxdOpFQi8G6QPmrdTVBej7f");
   cb.setOAuthConsumerSecret("NTm1ENxT36GgCXoRuaHxxcpkkzOFw1cz0v0kQYkFMX6is9JS9I");

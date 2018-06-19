@@ -143,11 +143,11 @@ cp5.addBang("Expulsar1").setPosition(720, 165).setSize(37, 37)
   
   cb = new ConfigurationBuilder();  
 
-  cb.setOAuthConsumerKey("FiB2YvaVIONIs5n5RDZfHHsyP");
-  cb.setOAuthConsumerSecret("0PXuPXTtgMl0F7hS4ErUfBIN1gx10eD7p06ByeQ3ofH3md6MLy");
+  cb.setOAuthConsumerKey("xx");
+  cb.setOAuthConsumerSecret("xxx");
   
-  cb.setOAuthAccessToken("2587937240-3BGpVyHj6my0J0GLI5z4Opv5N7M0O6e5g28rpni");
-  cb.setOAuthAccessTokenSecret("2FnJ9ED9SsyYk0MNSmYf8vsf6I48Mvoal8Zpk3DcL2bcq");
+  cb.setOAuthAccessToken("xx-xx");
+  cb.setOAuthAccessTokenSecret("xxx");
 
 
   
