@@ -86,25 +86,32 @@ void setup() {
      .setSize(50,20)
      .setValue(true)
      .setMode(ControlP5.SWITCH)
-     .setLabel("Com Arduino")
+     .setLabel("Control por Twitter")
      ;
       
 
   
  // aspersor 01
-  myTextlabelA = cp5.addTextlabel("label").setText("Aspersor 01").setPosition(700,130).setColorValue(0xffb9fdff)
+  myTextlabelA = cp5.addTextlabel("Aspersor1").setText("Aspersor 01").setPosition(700,130).setColorValue(0xffb9fdff)
                     .setFont(createFont("Arial",12));
   
   
 cp5.addBang("Expulsar1").setPosition(720, 165).setSize(37, 37)
-   .setLabel("Expulsar")
+   .setLabel("Pintar y Mover")
    ;
-  
 
-cp5.addBang("Detener1").setPosition(780, 165).setSize(37, 37)
-   .setLabel("Detener")
+
+cp5.addBang("pintar1").setPosition(800, 165).setSize(37, 37)
+   .setLabel("Pintar")
    ;
    
+cp5.addBang("Detener1").setPosition(800, 235).setSize(37, 37)
+   .setLabel("Detener")
+   ;
+ 
+cp5.addBang("PosionIni1").setPosition(880, 165).setSize(37, 37)
+   .setLabel("Posicion Inicial")
+   ;
  
   cp5.getController("ntweets1").getValueLabel().align(ControlP5.LEFT, ControlP5.BOTTOM_OUTSIDE).setPaddingX(0);
   cp5.getController("ntweets1").getCaptionLabel().align(ControlP5.RIGHT, ControlP5.BOTTOM_OUTSIDE).setPaddingX(0);
@@ -113,27 +120,34 @@ cp5.addBang("Detener1").setPosition(780, 165).setSize(37, 37)
 
  // aspersor 02
                       
-  myTextlabelB = cp5.addTextlabel("label").setText("Aspersor 02").setPosition(700,280)
+  myTextlabelB = cp5.addTextlabel("Aspersor2").setText("Aspersor 02").setPosition(700,325)
                     .setColorValue(0xffb9fdff)
                     .setFont(createFont("Arial",12))
                     ;
                     
- cp5.addBang("Expulsar2").setPosition(720, 325).setSize(37, 37)
-   .setLabel("Expulsar")
+ cp5.addBang("Expulsar2").setPosition(720, 365).setSize(37, 37)
+   .setLabel("Pintar y Mover")
    ;
-  
-  cp5.addBang("Detener2").setPosition(780, 325).setSize(37, 37)
+
+  cp5.addBang("pintar2").setPosition(800, 365).setSize(37, 37)
+   .setLabel("Pintar")
+   ;
+
+  cp5.addBang("Detener2").setPosition(800, 435).setSize(37, 37)
    .setLabel("Detener")
    ;
 
-  
+  cp5.addBang("PosionIni2").setPosition(880, 365).setSize(37, 37)
+     .setLabel("Posicion Inicial")
+   ;
+   
   // UI ////////////////                   
   
   f = createFont("DroidSans",12,true);
 
-
-  hashtag1="#POL";
-  hashtag2="#SEN";
+// valores hashtags equipos
+  hashtag1="#POR";
+  hashtag2="#MAR";
 
   //impulsoNecesario =1;
   
@@ -147,9 +161,10 @@ cp5.addBang("Detener1").setPosition(780, 165).setSize(37, 37)
   println(Serial.list());
    
   //  initialize your serial port and set the baud rate to 9600
-  myPort = new Serial(this, Serial.list()[0], 9600);
+ 
+  myPort = new Serial(this, Serial.list()[1], 9600);
   myPort.bufferUntil('\n'); 
-  
+ 
   cb = new ConfigurationBuilder();
 
   cb.setOAuthConsumerKey("luSxdOpFQi8G6QPmrdTVBej7f");
@@ -380,7 +395,7 @@ void keyPressed() {
   
 }
 
-void Expulsar1(int theN) {
+void Expulsar1() {
   
   myPort.write('1');
   timerTwit01.start();
@@ -388,7 +403,7 @@ void Expulsar1(int theN) {
 
 }
 
-void Expulsar2(int theN) {
+void Expulsar2() {
 
   myPort.write('2');
   timerTwit02.start();
@@ -396,12 +411,31 @@ void Expulsar2(int theN) {
 
 }
 
-void Detener1(int theN) {
+void pintar1() {
+  myPort.write('7');
+  
+}
+
+void pintar2() {
+  myPort.write('8');
+  
+}
+
+void Detener1() {
   myPort.write('3');
 }
 
-void Detener2(int theN) {
+void Detener2() {
   myPort.write('4');
+}
+
+void PosionIni1() {
+  myPort.write('5');
+}
+
+
+void PosionIni2(int theN) {
+  myPort.write('6');
 }
 
 void ntweets1(float elnumero1) {

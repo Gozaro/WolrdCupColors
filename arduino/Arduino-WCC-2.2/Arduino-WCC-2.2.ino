@@ -21,11 +21,11 @@ int randomRotacion1 = 0;
 int randomRotacion2 = 0;
 
 //valores definir rotacion servo
-int valorTope12 =85;
-int valorTope11 =100;
+int valorTope12 =30;
+int valorTope11 =150;
 
-int valorTope22 =95;
-int valorTope21 =85;
+int valorTope22 =30;
+int valorTope21 =150;
 
 
 String val2;
@@ -100,7 +100,6 @@ void loop() {
 
         // enciende motor 2
         if(val == '2')  {
-
          rotaAspersor2();
          digitalWrite(motorPinB, LOW); 
            
@@ -108,20 +107,32 @@ void loop() {
 
         // apaga motor 1
         if(val == '3')  {
-          
-         
          digitalWrite(motorPinA, HIGH); 
         } 
 
-
          // apaga motor 2
         if(val == '4')  {
-         
-         
          digitalWrite(motorPinB, HIGH);  
         } 
 
-        //val = 0;
+         // Posicion aspersor 01 al centro
+        if(val == '5')  {
+          servoMotor1.write(valorInicial1);
+        } 
+
+         // Posicion aspersor 02 al centro
+        if(val == '6')  {
+          servoMotor2.write(valorInicial2);
+        } 
+
+        if(val == '7')  {
+          digitalWrite(motorPinA, LOW); 
+        } 
+
+        if(val == '8')  {
+          digitalWrite(motorPinB, LOW); 
+        } 
+        
     }
   
 }
