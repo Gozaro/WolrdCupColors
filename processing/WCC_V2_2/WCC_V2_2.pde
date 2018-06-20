@@ -101,13 +101,10 @@ cp5.addBang("Expulsar1").setPosition(720, 165).setSize(37, 37)
    ;
   
 
- cp5.addSlider("tope11").setPosition(800,165).setSize(150,20).setRange(180,90).setValue(90)
- .setLabel("Tope 1 rotacion 180 / 90")
- ;
- 
-  cp5.addSlider("tope12").setPosition(800,200).setSize(150,20).setRange(90,0).setValue(0)
- .setLabel("Tope 2 rotacion 90 / 0")
- ;
+cp5.addBang("Detener1").setPosition(780, 165).setSize(37, 37)
+   .setLabel("Detener")
+   ;
+   
  
   cp5.getController("ntweets1").getValueLabel().align(ControlP5.LEFT, ControlP5.BOTTOM_OUTSIDE).setPaddingX(0);
   cp5.getController("ntweets1").getCaptionLabel().align(ControlP5.RIGHT, ControlP5.BOTTOM_OUTSIDE).setPaddingX(0);
@@ -125,25 +122,19 @@ cp5.addBang("Expulsar1").setPosition(720, 165).setSize(37, 37)
    .setLabel("Expulsar")
    ;
   
+  cp5.addBang("Detener2").setPosition(780, 325).setSize(37, 37)
+   .setLabel("Detener")
+   ;
 
- cp5.addSlider("tope21").setPosition(800,325).setSize(150,20).setRange(180,90).setValue(180)
- .setLabel("Tope 1 rotacion 180 / 90")
- ;
- 
-  cp5.addSlider("tope22").setPosition(800,360).setSize(150,20).setRange(90,0).setValue(0)
- .setLabel("Tope 2 rotacion 90 / 0")
- ;
-     
+  
   // UI ////////////////                   
   
   f = createFont("DroidSans",12,true);
-<<<<<<< HEAD
-  hashtag1="#wordcup";
-  hashtag2="wordcup2018";
-=======
-  hashtag1="#happy";
-  hashtag2="#worldcup";
->>>>>>> b90482eafaaf6cbea3f8e8d7c0f45ca0630c7fa2
+
+
+  hashtag1="#POL";
+  hashtag2="#SEN";
+
   //impulsoNecesario =1;
   
   //segundos encendidos el motor
@@ -405,31 +396,13 @@ void Expulsar2(int theN) {
 
 }
 
-
-void tope11(int vall11) {
- 
-  elangulo = str(vall11);
-  valorAspersor = "11";
-  elvalorqueva = valorAspersor+elangulo;
-  myPort.write(elvalorqueva);
-  myPort.write("");
-    
-  println(elvalorqueva);
-
+void Detener1(int theN) {
+  myPort.write('3');
 }
 
-void tope12(int vall12) {
- 
-  elangulo = str(vall12);
-  valorAspersor = "12";
-  elvalorqueva = valorAspersor+elangulo;
-  myPort.write(elvalorqueva);
-  myPort.write("");
-    
-  println(elvalorqueva);
-
+void Detener2(int theN) {
+  myPort.write('4');
 }
-
 
 void ntweets1(float elnumero1) {
   
