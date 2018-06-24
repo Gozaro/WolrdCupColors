@@ -49,8 +49,12 @@ int impulsoCoche02=0;
 int impulsoNecesario = 50;
 
 // tiempo encendido el motor
-int tiempo1Asp = 3;
-int tiempo2Asp = 3;
+/*
+int tiempo1Asp = 1;
+int tiempo2Asp = 1;
+*/
+int tiempo1Asp = 1;
+int tiempo2Asp = 1;
 
 String TwittActual1="";
 String TwittActual2="";
@@ -146,8 +150,8 @@ cp5.addBang("PosionIni1").setPosition(880, 165).setSize(37, 37)
   f = createFont("DroidSans",12,true);
 
 // valores hashtags equipos
-  hashtag1="#POR";
-  hashtag2="#MAR";
+  hashtag1="#BRA";
+  hashtag2="#worldcup";
 
   //impulsoNecesario =1;
   

@@ -24,8 +24,8 @@ int randomRotacion2 = 0;
 int valorTope12 =30;
 int valorTope11 =150;
 
-int valorTope22 =30;
-int valorTope21 =150;
+int valorTope22 =60;
+int valorTope21 =130;
 
 
 String val2;
@@ -153,6 +153,7 @@ void rotaAspersor2()
 
   //rotacion para aspersor 2
   randomRotacion2 = random(valorTope22,valorTope21);
+  //randomRotacion2 = 90;
   servoMotor2.write(randomRotacion2);
 
   
