@@ -65,12 +65,14 @@ Timer timerTwit02;
 
 ConfigurationBuilder  cb;
 
+
+
 void setup() {
   
   background(64,64,64);
   smooth();
   
-  size(1180, 960);
+  size(1180, 760);
   
   
   // UI ////////////////
@@ -83,6 +85,7 @@ void setup() {
    .setRange(1,200)
    .setValue(100)
    .setLabel("Numero de Tweets")
+   
    ;
   
    cp5.addToggle("toggle")
@@ -93,27 +96,33 @@ void setup() {
      .setLabel("Control por Twitter")
      ;
       
-
+  cp5.addSlider("tiempopinta")
+   .setPosition(720,85)
+   .setSize(80,20)
+   .setRange(1,5)
+   .setValue(1)
+   .setLabel("Segundos pintura")
+   ;
   
  // aspersor 01
-  myTextlabelA = cp5.addTextlabel("Aspersor1").setText("Aspersor 01").setPosition(700,130).setColorValue(0xffb9fdff)
+  myTextlabelA = cp5.addTextlabel("Aspersor1").setText("Aspersor 01").setPosition(700,160).setColorValue(0xffb9fdff)
                     .setFont(createFont("Arial",12));
   
   
-cp5.addBang("Expulsar1").setPosition(720, 165).setSize(37, 37)
+cp5.addBang("Expulsar1").setPosition(720, 195).setSize(37, 37)
    .setLabel("Pintar y Mover")
    ;
 
 
-cp5.addBang("pintar1").setPosition(800, 165).setSize(37, 37)
+cp5.addBang("pintar1").setPosition(800, 195).setSize(37, 37)
    .setLabel("Pintar")
    ;
    
-cp5.addBang("Detener1").setPosition(800, 235).setSize(37, 37)
+cp5.addBang("Detener1").setPosition(800, 265).setSize(37, 37)
    .setLabel("Detener")
    ;
  
-cp5.addBang("PosionIni1").setPosition(880, 165).setSize(37, 37)
+cp5.addBang("PosionIni1").setPosition(880, 195).setSize(37, 37)
    .setLabel("Posicion Inicial")
    ;
  
@@ -124,24 +133,24 @@ cp5.addBang("PosionIni1").setPosition(880, 165).setSize(37, 37)
 
  // aspersor 02
                       
-  myTextlabelB = cp5.addTextlabel("Aspersor2").setText("Aspersor 02").setPosition(700,325)
+  myTextlabelB = cp5.addTextlabel("Aspersor2").setText("Aspersor 02").setPosition(700,355)
                     .setColorValue(0xffb9fdff)
                     .setFont(createFont("Arial",12))
                     ;
                     
- cp5.addBang("Expulsar2").setPosition(720, 365).setSize(37, 37)
+ cp5.addBang("Expulsar2").setPosition(720, 395).setSize(37, 37)
    .setLabel("Pintar y Mover")
    ;
 
-  cp5.addBang("pintar2").setPosition(800, 365).setSize(37, 37)
+  cp5.addBang("pintar2").setPosition(800, 395).setSize(37, 37)
    .setLabel("Pintar")
    ;
 
-  cp5.addBang("Detener2").setPosition(800, 435).setSize(37, 37)
+  cp5.addBang("Detener2").setPosition(800, 465).setSize(37, 37)
    .setLabel("Detener")
    ;
 
-  cp5.addBang("PosionIni2").setPosition(880, 365).setSize(37, 37)
+  cp5.addBang("PosionIni2").setPosition(880, 395).setSize(37, 37)
      .setLabel("Posicion Inicial")
    ;
    
@@ -459,4 +468,17 @@ void toggle(boolean theFlag) {
     
   }
 
+}
+
+void tiempopinta(float eltiempo) {
+  
+  tiempo1Asp = int(eltiempo);
+  tiempo2Asp = int(eltiempo);
+  
+  timerTwit01 = new Timer(tiempo1Asp);
+  timerTwit02 = new Timer(tiempo2Asp);
+  
+  
+  println(tiempo1Asp);
+  
 }
