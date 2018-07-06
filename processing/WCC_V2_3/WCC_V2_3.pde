@@ -72,7 +72,7 @@ void setup() {
   background(64,64,64);
   smooth();
   
-  size(1180, 760);
+  size(1366, 768);
   
   
   // UI ////////////////
@@ -159,8 +159,8 @@ cp5.addBang("PosionIni1").setPosition(880, 195).setSize(37, 37)
   f = createFont("DroidSans",12,true);
 
 // valores hashtags equipos
-  hashtag1="#BRA";
-  hashtag2="#worldcup";
+  hashtag1="URU";
+  hashtag2="FRA";
 
   //impulsoNecesario =1;
   
@@ -304,7 +304,7 @@ void draw() {
     
     
     fill(50);
-    rect(650, 0, width/2, height);  
+    rect(660, 0, width/2, height);  
     
   // UI ////////////////  
     myTextlabelA.draw(this); 

@@ -21,11 +21,11 @@ int randomRotacion1 = 0;
 int randomRotacion2 = 0;
 
 //valores definir rotacion servo
-int valorTope12 =30;
-int valorTope11 =150;
+int valorTope12 =50;
+int valorTope11 =130;
 
-int valorTope22 =60;
-int valorTope21 =130;
+int valorTope22 =40;
+int valorTope21 =140;
 
 
 String val2;
@@ -142,6 +142,8 @@ void rotaAspersor1()
 
   //rotacion para aspersor 1
   randomRotacion1 = random(valorTope12,valorTope11);
+  //randomRotacion1 = 50;
+  //randomRotacion1 = 20;
   servoMotor1.write(randomRotacion1);
 
   //delay(1000);
@@ -153,7 +155,7 @@ void rotaAspersor2()
 
   //rotacion para aspersor 2
   randomRotacion2 = random(valorTope22,valorTope21);
-  //randomRotacion2 = 90;
+  //randomRotacion2 = 140;
   servoMotor2.write(randomRotacion2);
 
   
