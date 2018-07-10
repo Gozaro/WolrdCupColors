@@ -159,8 +159,13 @@ cp5.addBang("PosionIni1").setPosition(880, 195).setSize(37, 37)
   f = createFont("DroidSans",12,true);
 
 // valores hashtags equipos
+<<<<<<< HEAD
   hashtag1="URU";
   hashtag2="FRA";
+=======
+  hashtag1="#SWE";
+  hashtag2="#SUI";
+>>>>>>> 7630de718bf9e355973f7900207cb9672a10c024
 
   //impulsoNecesario =1;
   

@@ -7,13 +7,14 @@ class Timer{
   Boolean running = false;
   Boolean reinicia = false;
 
+  int divisor = 1000;
  
   Timer(int limit)  {
     this.limit = limit;
   }
  
   void reset()  {
-    start = millis()/1000;
+    start = millis()/divisor;
     elapsed=1;
     reinicia=true;
     
@@ -35,7 +36,7 @@ class Timer{
     
     if(running) {
       reinicia =false;
-      elapsed = 1+(millis()/1000) - start;
+      elapsed = 1+(millis()/divisor) - start;
     }
     
     if(elapsed >= limit) {
