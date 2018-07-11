@@ -37,6 +37,9 @@ class Timer{
     if(running) {
       reinicia =false;
       elapsed = 1+(millis()/divisor) - start;
+      
+      //println(millis()/divisor);
+      
     }
     
     if(elapsed >= limit) {

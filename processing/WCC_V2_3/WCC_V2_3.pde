@@ -1,6 +1,6 @@
-//Version 2.2
+//Version 2.3
 // esta version usa una nueva App de Twitter https://apps.twitter.com/
-import processing.serial.*; //import the Serial library
+//import processing.serial.*; //import the Serial library
 
 
 // importamos librerias 
@@ -159,13 +159,10 @@ cp5.addBang("PosionIni1").setPosition(880, 195).setSize(37, 37)
   f = createFont("DroidSans",12,true);
 
 // valores hashtags equipos
-<<<<<<< HEAD
+
   hashtag1="URU";
   hashtag2="FRA";
-=======
-  hashtag1="#SWE";
-  hashtag2="#SUI";
->>>>>>> 7630de718bf9e355973f7900207cb9672a10c024
+
 
   //impulsoNecesario =1;
   
@@ -227,7 +224,7 @@ cp5.addBang("PosionIni1").setPosition(880, 195).setSize(37, 37)
               if(impulsoCoche01 > impulsoNecesario && activo) {
                 
                 myPort.write('1');
-                timerTwit01.start();
+                //timerTwit01.start();
                 impulsoCoche01 =0;
                 
               }
@@ -253,7 +250,7 @@ cp5.addBang("PosionIni1").setPosition(880, 195).setSize(37, 37)
               if(impulsoCoche02 > impulsoNecesario && activo) {
                 
                 myPort.write('2');
-                timerTwit02.start();
+                //timerTwit02.start();
                 impulsoCoche02 =0;
                
               }
@@ -330,7 +327,7 @@ void draw() {
      
     text("Hashtag equipo 1: "+hashtag1,15,25);
     text("Número menciones: "+mencionesHashtag1,15,47); //22
-    text("Disparos: "+impulsoCoche01,15,69);
+    text("Total parcial: "+impulsoCoche01,15,69);
     
     text("Twitt actual:",15,107);
     text(TwittActual1,15,129,260,250);
@@ -340,7 +337,7 @@ void draw() {
     
     text("Hashtag equipo 2: "+hashtag2,315,25);
     text("Número menciones: "+mencionesHashtag2,315,47); //22
-    text("Disparos: "+impulsoCoche02,315,69);
+    text("Total parcial: "+impulsoCoche02,315,69);
     
     text("Twitt actual:",315,107);
     text(TwittActual2,315,129,260,250);
@@ -349,7 +346,7 @@ void draw() {
 
 
     //hacemos correr coche
-
+/*
     if(timerTwit01.running) {
       
       noPara1 = true;
@@ -358,14 +355,14 @@ void draw() {
       //println("Running");
       
     }
-    
+
     
     if(!timerTwit01.running && noPara1) {
       myPort.write('3');
       println("Para1");
       noPara1 = false;
     }
- 
+
 
     if(timerTwit02.running) {
       
@@ -384,7 +381,7 @@ void draw() {
       println("Para2");
     }
 
- 
+  */
      //myPort.write('0');
 }
 
