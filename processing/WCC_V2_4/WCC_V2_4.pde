@@ -99,7 +99,7 @@ void setup() {
   cp5.addSlider("tiempopinta")
    .setPosition(720,85)
    .setSize(80,20)
-   .setRange(1,5000)
+   .setRange(100,5000)
    .setValue(1)
    .setLabel("Segundos pintura")
    ;
@@ -303,10 +303,8 @@ void draw() {
   
     background(64,64,64);
     
-    
-    
     fill(50);
-    rect(660, 0, width/2, height);  
+    rect(683, 0, width/2, height);  
     
   // UI ////////////////  
     myTextlabelA.draw(this); 
@@ -474,19 +472,12 @@ void toggle(boolean theFlag) {
 
 void tiempopinta(float eltiempo) {
   
-  String valorTienpoQueVa = str(eltiempo);
-  myPort.write(valorTienpoQueVa);
+  int valorTienpoQueVaIn = int(eltiempo);
+  String valorTienpoQueVaSt = str(valorTienpoQueVaIn);
+  myPort.write(valorTienpoQueVaSt);
   
   
-  /*
-  tiempo1Asp = int(eltiempo);
-  tiempo2Asp = int(eltiempo);
-  
- 
-  timerTwit01 = new Timer(tiempo1Asp);
-  timerTwit02 = new Timer(tiempo2Asp);
-  */
-  
-  println(tiempo1Asp);
+
+  println(valorTienpoQueVaSt);
   
 }
