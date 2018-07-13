@@ -156,12 +156,9 @@ void loop() {
 void rotaAspersor1()
 {
 
- 
-  //rotacion para aspersor 1
+
   randomRotacion1 = random(valorTope12,valorTope11);
   servoMotor1.write(randomRotacion1);
-
- 
 
   delay(milisexpulsado);
   //apaga motor
@@ -169,6 +166,30 @@ void rotaAspersor1()
 
   
 }
+
+/*
+void rotaAspersor1(int elvalorx)
+{
+  int milisexpulsado = elvalorx;
+  
+  //rotacion para aspersor 1
+  if(elvalorx < 90) 
+  {
+    randomRotacion1 = random(valorTope12,valorTope11);
+    servoMotor1.write(randomRotacion1);
+  
+    delay(milisexpulsado);
+    //apaga motor
+    digitalWrite(motorPinA, HIGH); 
+  }
+
+  if(elvalorx > 90) 
+    milisexpulsado = elvalorx;
+    
+   }
+  
+}
+*/
 
 void rotaAspersor2()
 {
