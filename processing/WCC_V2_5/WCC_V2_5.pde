@@ -429,7 +429,7 @@ void tiempopinta(float eltiempo) {
   
   int valorTienpoQueVaIn = int(eltiempo);
   String valorTienpoQueVaSt = str(valorTienpoQueVaIn);
-  //myPort.write(valorTienpoQueVaSt);
+  myPort.write(valorTienpoQueVaSt);
   
   
 

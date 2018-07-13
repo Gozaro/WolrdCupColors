@@ -31,7 +31,7 @@ int valorTope21 =130;
 int milisexpulsado =300;
 
 // control dinamico tiempo
-int elvalor = milisexpulsado;
+String elvalor = "";
 String val2;
 
 
@@ -89,10 +89,15 @@ void loop() {
     if (Serial.available() > 0) { // If data is available to read
         
         val = Serial.read(); 
-        //val2 = Serial.readString(); 
+
+
+        //elvalor = Serial.readString();
+        //milisexpulsado = elvalor.toInt();
+        //elvalor = Serial.parseInt(); 
 
         //ajustar tiempo de ejeccion
-         //elvalor = val2.toInt();
+        
+         
          //valorTope11 = numeroElValor.toInt();
 
 
@@ -141,11 +146,13 @@ void loop() {
         if(val == '8')  {
           digitalWrite(motorPinB, LOW); 
         } 
+
+ 
         
     }
 
 
-  milisexpulsado = elvalor;
+//  milisexpulsado = elvalor;
   
 }
 
@@ -156,6 +163,8 @@ void rotaAspersor1()
   randomRotacion1 = random(valorTope12,valorTope11);
   servoMotor1.write(randomRotacion1);
 
+  //milisexpulsado=elvalor;
+  //if(elvalor>10) milisexpulsado=elvalor;
   delay(milisexpulsado);
   //apaga motor
   digitalWrite(motorPinA, HIGH); 
@@ -170,6 +179,7 @@ void rotaAspersor2()
   randomRotacion2 = random(valorTope22,valorTope21);
   servoMotor2.write(randomRotacion2);
 
+  //if(elvalor>10) milisexpulsado=elvalor;
   delay(milisexpulsado);
   //apaga motor
   digitalWrite(motorPinB, HIGH); 
