@@ -458,26 +458,26 @@ void controlEvent(ControlEvent theEvent) {
   }
   if(theEvent.getValue() == 1.0) {
     myPort.write('b');
-    println(theEvent.getValue());
+    
   }
   if(theEvent.getValue() == 2.0) {
     myPort.write('c');
-    println(theEvent.getValue());
+
   }
   if(theEvent.getValue() == 3.0) {
-    println(theEvent.getValue());
+    myPort.write('d');
   }
   if(theEvent.getValue() == 4.0) {
-    println(theEvent.getValue());
+     myPort.write('e');  
   }
   if(theEvent.getValue() == 5.0) {
-    println(theEvent.getValue());
+       myPort.write('f');
   }
   if(theEvent.getValue() == 6.0) {
-    println(theEvent.getValue());
+      myPort.write('g');
   }
   if(theEvent.getValue() == 7.0) {
-    println(theEvent.getValue());
+       myPort.write('h');
   }
   
 }
