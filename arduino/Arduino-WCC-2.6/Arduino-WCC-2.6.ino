@@ -27,12 +27,11 @@ int valorTope11 =150;
 int valorTope22 =60;
 int valorTope21 =130;
 
-//tiempo que esta el motor expulsando pintura en milisegundos
-int milisexpulsado;
+
 
 // control dinamico tiempo
 String elvalor = "";
-String val2;
+int milisexpulsado = 300;
 
 
 //valores definir rotacion servo FIN
@@ -73,7 +72,7 @@ void setup() {
   servoMotor2.write(valorInicial2);
   
 //servos fin
-  milisexpulsado = 300;
+
  
 }
 
@@ -136,21 +135,28 @@ void loop() {
           digitalWrite(motorPinB, LOW); 
         } 
 
-         if(val == 'a')  { milisexpulsado = 100;} 
-         if(val == 'b')  { milisexpulsado = 200;} 
-         if(val == 'c')  { milisexpulsado = 300;}  
-         if(val == 'd')  { milisexpulsado = 400;} 
-         if(val == 'e')  { milisexpulsado = 500;}  
-         if(val == 'f')  { milisexpulsado = 1000;} 
-         if(val == 'g')  { milisexpulsado = 1500;} 
-         if(val == 'h')  { milisexpulsado = 2000;}
+         if(val == 'a')  {setupTiempoPinta(100);} 
+         if(val == 'b')  {setupTiempoPinta(200);} 
+         if(val == 'c')  {setupTiempoPinta(300);}  
+         if(val == 'd')  {setupTiempoPinta(400);} 
+         if(val == 'e')  {setupTiempoPinta(500);}  
+         if(val == 'f')  {setupTiempoPinta(1000);} 
+         if(val == 'g')  {setupTiempoPinta(1500);} 
+         if(val == 'h')  {setupTiempoPinta(2000);}
 
-         
+        
     }
 
 
 //  milisexpulsado = elvalor;
   
+}
+
+void setupTiempoPinta(int tiempo)
+{
+  
+  milisexpulsado = tiempo;
+
 }
 
 void rotaAspersor1()
@@ -167,45 +173,20 @@ void rotaAspersor1()
   
 }
 
-/*
-void rotaAspersor1(int elvalorx)
-{
-  int milisexpulsado = elvalorx;
-  
-  //rotacion para aspersor 1
-  if(elvalorx < 90) 
-  {
-    randomRotacion1 = random(valorTope12,valorTope11);
-    servoMotor1.write(randomRotacion1);
-  
-    delay(milisexpulsado);
-    //apaga motor
-    digitalWrite(motorPinA, HIGH); 
-  }
-
-  if(elvalorx > 90) 
-    milisexpulsado = elvalorx;
-    
-   }
-  
-}
-*/
-
 void rotaAspersor2()
 {
 
-  //rotacion para aspersor 2
-  randomRotacion2 = random(valorTope22,valorTope21);
-  servoMotor2.write(randomRotacion2);
 
+  randomRotacion1 = random(valorTope22,valorTope21);
+  servoMotor2.write(randomRotacion2);
 
   delay(milisexpulsado);
   //apaga motor
   digitalWrite(motorPinB, HIGH); 
 
   
-    
 }
+
 
 
 
