@@ -8,7 +8,7 @@ int motorPinA = 7; //Motor
 int motorPinB = 8; //Motor
 
 char val;
-int dato=0;
+
 
 //servos
  Servo servoMotor1;
@@ -21,17 +21,15 @@ int randomRotacion1 = 0;
 int randomRotacion2 = 0;
 
 //valores definir rotacion servo
-int valorTope12 =30;
-int valorTope11 =150;
+int valorTope12 =60;
+int valorTope11 =120;
 
-int valorTope22 =60;
+int valorTope22 =80;
 int valorTope21 =130;
 
-
-
 // control dinamico tiempo
-String elvalor = "";
-int milisexpulsado = 300;
+
+int milisexpulsado;
 
 
 //valores definir rotacion servo FIN
@@ -73,7 +71,8 @@ void setup() {
   
 //servos fin
 
- 
+  //tiempo default expulsa
+  milisexpulsado = setupTiempoPinta(1000);
 }
 
 
@@ -89,7 +88,7 @@ void loop() {
         
         val = Serial.read(); 
 
-
+        int valorTiempo;
        
         if(val == '1')  {
 
@@ -135,27 +134,25 @@ void loop() {
           digitalWrite(motorPinB, LOW); 
         } 
 
-         if(val == 'a')  {setupTiempoPinta(100);} 
-         if(val == 'b')  {setupTiempoPinta(200);} 
-         if(val == 'c')  {setupTiempoPinta(300);}  
-         if(val == 'd')  {setupTiempoPinta(400);} 
-         if(val == 'e')  {setupTiempoPinta(500);}  
-         if(val == 'f')  {setupTiempoPinta(1000);} 
-         if(val == 'g')  {setupTiempoPinta(1500);} 
-         if(val == 'h')  {setupTiempoPinta(2000);}
+
+  
+         if(val == 'a')  {milisexpulsado = setupTiempoPinta(100);} 
+         if(val == 'b')  {milisexpulsado = setupTiempoPinta(200);} 
+         if(val == 'c')  {milisexpulsado = setupTiempoPinta(300);}  
+         if(val == 'd')  {milisexpulsado = setupTiempoPinta(400);} 
+         if(val == 'e')  {milisexpulsado = setupTiempoPinta(500);}  
+         if(val == 'f')  {milisexpulsado = setupTiempoPinta(1000);} 
+         if(val == 'g')  {milisexpulsado = setupTiempoPinta(1500);} 
+         if(val == 'h')  {milisexpulsado = setupTiempoPinta(2000);}
 
         
-    }
-
-
-//  milisexpulsado = elvalor;
-  
+    }  
 }
 
-void setupTiempoPinta(int tiempo)
+int setupTiempoPinta(int tiempo)
 {
-  
-  milisexpulsado = tiempo;
+    
+    return  milisexpulsado = tiempo;
 
 }
 
@@ -170,6 +167,7 @@ void rotaAspersor1()
   //apaga motor
   digitalWrite(motorPinA, HIGH); 
 
+ 
   
 }
 
@@ -177,7 +175,7 @@ void rotaAspersor2()
 {
 
 
-  randomRotacion1 = random(valorTope22,valorTope21);
+  randomRotacion2 = random(valorTope22,valorTope21);
   servoMotor2.write(randomRotacion2);
 
   delay(milisexpulsado);

@@ -85,7 +85,7 @@ void setup() {
   cp5.addSlider("ntweets1")
    .setPosition(720,30)
    .setSize(200,20)
-   .setRange(1,200)
+   .setRange(1,1000)
    .setValue(100)
    .setLabel("Numero de Tweets")
    
@@ -181,8 +181,8 @@ cp5.addBang("PosionIni1").setPosition(880, 195).setSize(37, 37)
 
 // valores hashtags equipos
 
-  hashtag1="#FRA";
-  hashtag2="#CRO";
+  hashtag1="#robotazul";
+  hashtag2="#Robotrojo";
 
 
   //impulsoNecesario =1;
@@ -258,7 +258,7 @@ cp5.addBang("PosionIni1").setPosition(880, 195).setSize(37, 37)
         
         String[] m2 = match(status.getText(), hashtag2);
         
-        if (m2 != null && activo) {
+        if (m2 != null) {
           
               //println(hashtag2);
               
@@ -303,7 +303,6 @@ cp5.addBang("PosionIni1").setPosition(880, 195).setSize(37, 37)
   String keywords[] = {
     hashtag1,
     hashtag2
-    //"#worldracecup"
   };
  
   FilterQuery fq = new FilterQuery(); 
@@ -357,15 +356,13 @@ void draw() {
     
     text("Twitt actual:",315,107);
     text(TwittActual2,315,129,260,250);
-    
-  // UI ////////////////  
-     //myPort.write('0');
+
 }
 
 
 void keyPressed() {
   
-  //myPort.write('1');
+
   
   if(key == '1')
     myPort.write('1');
@@ -431,7 +428,7 @@ void PosionIni2(int theN) {
 void ntweets1(float elnumero1) {
   
   impulsoNecesario = int(elnumero1); //myColor = color(theColor);
-  println("Numero de tweets necesarios para expulsar "+elnumero1);
+  //println("Numero de tweets necesarios para expulsar "+elnumero1);
 }
 
 void toggle(boolean theFlag) {
@@ -454,7 +451,7 @@ void controlEvent(ControlEvent theEvent) {
 
   if(theEvent.getValue() == 0.0) {
     myPort.write('a');
-    println(theEvent.getValue());
+    //println(theEvent.getValue());
   }
   if(theEvent.getValue() == 1.0) {
     myPort.write('b');
